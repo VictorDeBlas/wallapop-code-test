@@ -1,0 +1,24 @@
+<div class="item">
+  <i class="favorite-icon fa fal" [ngClass]="{'fa-star-o': !item.favorite, 'fa-star': item.favorite}" (click)="item.favorite=!item.favorite"></i>
+  <div class="image-container">
+    <img [src]="'assets/images/'+item.image"/>
+  </div>
+  <div class="info-container">
+    <div class="info-row">
+      <span class="header">Title: </span>
+      <span class="value">{{item.title}}</span>
+    </div>
+    <div class="info-row" *ngIf="!isFavoriteList">
+      <span class="header">Description: </span>
+      <span class="value">{{item.description}}</span>
+    </div>
+    <div class="info-row" *ngIf="!isFavoriteList">
+      <span class="header">Price: </span>
+      <span class="value">{{item.price}}</span>
+    </div>
+    <div class="info-row" *ngIf="!isFavoriteList">
+      <span class="header">E-mail: </span>
+      <span class="value">{{item.email}}</span>
+    </div>
+  </div>
+</div>
