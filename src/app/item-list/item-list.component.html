@@ -1,3 +1,3 @@
-<div *ngFor="let item of itemList">
+<div *ngFor="let item of itemList | search: [searchText, searchBy] | order: orderBy">
   <w-item [item]="item"></w-item>
 </div>

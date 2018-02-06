@@ -5,7 +5,10 @@
         <h4 class="modal-title">Favorite List</h4>
       </div>
       <div class="modal-body">
-        <div *ngIf="favoriteList.length > 0">
+        <div class="filters">
+          <input [(ngModel)]="searchValue" placeholder="search" (keyup)="updateList()">
+        </div>
+        <div class="item-list" *ngIf="favoriteList.length > 0">
           <div *ngFor="let item of favoriteList">
             <w-item [item]="item" [isFavoriteList]="true"></w-item>
           </div>

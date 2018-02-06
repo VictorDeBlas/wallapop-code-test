@@ -1,8 +1,22 @@
 <nav>
     <button (click)="showFavoritesList()">My Favorites</button>
+    <input [(ngModel)]="searchValue" placeholder="search..." (keyup)="updateSearchText()">
+    <select #selectSearch (change)="setOption(selectSearch.value)">
+        <option *ngFor="let option of searchOptions" [value]="option">
+            {{option}}
+        </option>
+    </select>
+    <select #selectOrder (change)="setOrder(selectOrder.value)">
+        <option [ngValue]="undefined" disabled  selected>Order by...</option>
+        <option *ngFor="let option of searchOptions" [value]="option">
+            {{option}}
+        </option>
+    </select>
+    
 </nav>
 <div class="page-container">
     <h2>Wallapop Code Test!</h2>
     <w-item-list #itemList></w-item-list>
+    <button (click)="loadMoreItems()" [disabled]="!itemListComponent.hasMoreAvailable">Load More</button>
 </div>
 

@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { ModalModule } from 'ngx-modialog';
 import { BootstrapModalModule } from 'ng2-bootstrap-modal';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { BootstrapModalModule } from 'ng2-bootstrap-modal';
     HttpClientModule,
     HttpModule,
     FavoritesModule,
+    FormsModule,
     ModalModule.forRoot(),
     BootstrapModalModule.forRoot({container:document.body})
   ],

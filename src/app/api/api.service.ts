@@ -14,9 +14,8 @@ export class ApiService {
     return this.http.get('../../assets/items.json')
             .map((res:any) => {
               let parsedResponse = res.json();
-              let itemListToConvert = parsedResponse.items.splice(page*5, 5 + page*5);
+              let itemListToConvert = parsedResponse.items.splice(page*5, 5);
               return this.convertDataToItems(itemListToConvert);
-              // return parsedResponse.items.splice(page*5, 5 + page*5);
             });
   }
 

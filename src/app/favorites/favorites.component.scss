@@ -1,0 +1,17 @@
+.modal-body {
+    max-height: 700px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    .filters{
+        input {
+            padding: 5px;
+            border-radius: 3px;
+            width: 100%;
+            border: 1px solid #a3a3a3;
+        }
+    }
+    .item-list {
+        flex: 1 0 auto;
+    }
+}

@@ -14,12 +14,21 @@ export interface FavoriteList {
 export class FavoritesComponent extends DialogComponent<FavoriteList, boolean> implements FavoriteList, OnInit {
 
   public favoriteList: Array<ItemData>;
+  public searchValue: string;
+  public auxFavoriteList: Array<ItemData>;
   
   constructor(dialogService: DialogService) {
     super(dialogService);
   }
 
   ngOnInit() {
+    this.auxFavoriteList = this.favoriteList;
+  }
+
+  public updateList(): void {
+    this.favoriteList = this.auxFavoriteList.filter( item => {
+      return item.title.toLowerCase().indexOf(this.searchValue.toLowerCase()) > -1;
+    });
   }
 
 }
